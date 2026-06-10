@@ -1,0 +1,63 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Packaging and build output
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables and local configuration
+.env
+.env.*
+*.local
+
+# Hugging Face and dataset caches
+.cache/
+huggingface/
+hf_cache/
+
+# Large or generated datasets
+data/raw/
+data/processed/
+data/train/
+data/archive/
+
+# Generated tokenizer artifacts and reports
+artifacts/
+reports/
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+
+# Evaluation datasets
+data/evaluation/
+data/reports/

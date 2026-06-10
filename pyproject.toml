@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "indic-bpe-tokenizer"
+version = "0.1.0"
+description = "Hindi-first Indic BPE tokenizer trained with Hugging Face tokenizers"
+requires-python = ">=3.10"
+dependencies = [
+    "tokenizers>=0.19,<1.0",
+    "transformers>=4.40,<5.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
