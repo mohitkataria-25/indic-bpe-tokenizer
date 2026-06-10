@@ -104,7 +104,7 @@ def extract_train_eval_corpus(
     train_output_path: Path,
     eval_output_path: Path,
     stats_output_path: Path,
-    max_articles: int | None = 10_000,
+    max_articles: int | None = None,
     eval_ratio: float = 0.10,
     min_line_length: int = 40,
     max_line_length: int = 5_000,
@@ -221,8 +221,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--max-articles",
         type=int,
-        default=10_000,
-        help="Maximum Wikipedia articles to process. Use 0 for all articles.",
+        default=None,
+        help=(
+            "Optional maximum number of Wikipedia articles to process. "
+            "Omit this argument, or pass 0, to process the full Hindi "
+            "Wikipedia split."
+        ),
     )
     parser.add_argument(
         "--eval-ratio",
@@ -252,6 +256,11 @@ def main() -> None:
     """Stream Hindi Wikipedia and build train/evaluation corpus files."""
     args = parse_args()
     max_articles = None if args.max_articles == 0 else args.max_articles
+
+    if max_articles is None:
+        print("Processing the full Hindi Wikipedia split.")
+    else:
+        print(f"Processing up to {max_articles} Hindi Wikipedia articles.")
 
     articles = load_hindi_wikipedia_stream()
     stats = extract_train_eval_corpus(
