@@ -48,6 +48,7 @@ data/raw/
 data/processed/
 data/train/
 data/archive/
+data/downloads/
 
 # Generated tokenizer artifacts and reports
 artifacts/
